@@ -12,6 +12,7 @@ go mod tidy
 this will install dependencies and packages. 
 Now, Create two postgresql databases and update the connection strings of the servers of both the service 
 > go-usermgmt-grpc > usermgmt_server > usermgmt_server.go > func main() > database_url
+> 
 > go-txnmgmt-grpc > txnmgmt_server > txnmgmt_server.go > func main() > database_url
 
 If the proto files are changed then generate `.pb` file with this example command _(assuming protoc already installed)_
