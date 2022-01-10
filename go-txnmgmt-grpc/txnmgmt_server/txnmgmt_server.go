@@ -151,7 +151,7 @@ func (server *TxnManagementServer) TxnDown(ctx context.Context, in *pb.TxnInfo) 
 }
 
 func main() {
-	database_url := "postgres://reshop:737467@localhost:5432/txnmgmt"
+	database_url := "postgres://myUsername:myPassword@localhost:5432/txnmgmt"
 	var txn_mgmt_server *TxnManagementServer = NewTxnManagementServer()
 	conn, err := pgx.Connect(context.Background(), database_url)
 	if err != nil {

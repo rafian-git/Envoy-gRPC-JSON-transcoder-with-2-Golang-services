@@ -115,7 +115,7 @@ func CreateToken(username string, password string) (tokenString string) {
 }
 
 func main() {
-	database_url := "postgres://reshop:737467@localhost:5432/usermgmt"
+	database_url := "postgres://myUsername:myPassword@localhost:5432/usermgmt"
 	var user_mgmt_server *UserManagementServer = NewUserManagementServer()
 	conn, err := pgx.Connect(context.Background(), database_url)
 	if err != nil {
