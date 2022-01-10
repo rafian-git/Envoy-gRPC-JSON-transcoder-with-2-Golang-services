@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+
+package usermgmt;
+
+option go_package = "example.com/usermgmt;usermgmt";
+import "googleapi/google/api/annotations.proto";
+
+service UserManagement {
+  rpc CreateNewUser (NewUser) returns (User) {
+    option (google.api.http) = {
+      post: "/user"
+      body: "*"
+    };
+  }
+  rpc UserLogin (LoginReq) returns (LoginRes) {
+    option (google.api.http) = {
+      post: "/user/login"
+      body: "*"
+    };
+  } 
+}
+
+message LoginReq {
+  string username = 1;
+  string password = 2; 
+}
+
+message LoginRes {
+  string token = 1; 
+}
+
+message NewUser {
+  string username = 1;
+  string password = 2;
+  int32 age = 3;
+}
+
+message User {
+  string username = 1;
+  string password = 2;
+  int32 age = 3;
+  int32 id = 4; 
+} 
+
+

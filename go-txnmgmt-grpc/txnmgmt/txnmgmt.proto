@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package txnmgmt;
+
+option go_package = "example.com/txnmgmt;txnmgmt";
+import "googleapi/google/api/annotations.proto";
+
+service TxnManagement {
+  rpc getBalance (userId) returns (CurBlnc) {
+    option (google.api.http) = {
+      get: "/users/balance/{userId}"
+    };
+  }
+  rpc txnUp (txnInfo) returns (amount) {
+    option (google.api.http) = {
+      post: "/transactions/up"
+      body: "*"
+    };
+  }
+  rpc txnDown (txnInfo) returns (amount) {
+    option (google.api.http) = {
+      post: "/transactions/down"
+      body: "*"
+    };
+  }
+}
+
+// for get balance
+message CurBlnc {
+  string userId = 1;
+  int64 balance = 2;
+}
+
+
+message userId {
+  string userId = 1;
+}
+
+// for transaction up & down
+message txnInfo {
+  string userId = 1; 
+  int64 amount = 2;
+} 
+
+message amount {
+  int64 amount = 1;
+}
+ 
