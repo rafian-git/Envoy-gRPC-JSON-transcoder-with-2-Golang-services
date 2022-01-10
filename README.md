@@ -39,5 +39,5 @@ envoy --config-path transcode_to_gRPC.yaml
 
 Now, test the endpoints using the given `json` collection file in the `http-request-collection` directory & see the ✨Magic✨
 
-_N.B. Being new to in Golang, I didn't add dependency folders to .gitignore in fear of version mismatch issues. Due to this cloning may take longer than expected_
+_N.B. Being new in Golang, I didn't add dependency folders to .gitignore in fear of version mismatch issues. Due to this cloning may take longer than expected_
 
